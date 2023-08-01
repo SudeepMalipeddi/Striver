@@ -30,6 +30,41 @@ public class recursions {
         if(n == 1) return n;
         return n * fact(n-1);
     }
+    void rev(int arr[],int n){
+        int p1=0, p2=n-1,temp=0;
+        while(p1<=p2){
+            temp = arr[p1];
+            arr[p1] = arr[p2];
+            arr[p2] = temp;
+            p1++;
+            p2--;
+        }
+    }
+    public boolean isPalindrome(String s){
+        if(s.isEmpty()){
+            return true;
+        }
+        int start = 0;
+        int end = s.length() - 1;
+        while(start<=end){
+            char first = s.charAt(start);
+            char last = s.charAt(end);
+            if(!Character.isLetterOrDigit(first)){
+                start++;
+            }
+            else if(!Character.isLetterOrDigit(last)){
+                end--;
+            }
+            else{
+                if(Character.toLowerCase(first) != Character.toLowerCase(last)){
+                    return false;
+                }
+                start++;
+                end--;
+            }
+        }
+        return true;
+    }
     public static void main(String[] args) {
         recursions r = new recursions();
         // r.func1();
