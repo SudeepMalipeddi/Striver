@@ -7,6 +7,6 @@ public class GCD {
     }
     public static void main(String[] args) {    
         int a=3,b=6;
-        System.out.println(gcd(5,10));
+        System.out.println(gcd(a,b));
     }
 }
